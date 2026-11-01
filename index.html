@@ -1,18 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Skills Check 006 — Test your knowledge of CSS link states, anchor styling, and text decoration."
+        />
+        <meta name="theme-color" content="#17101f" />
+        <title>006 — Links & Text Decoration | Skills Check</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-<body>
-    start
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
 
-    <script src="./assets/js/main.js"></script>
-</body>
+    <body>
+        <div class="noise" aria-hidden="true"></div>
 
+        <header class="header">
+            <a
+                class="brand"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+            >
+                <span class="brand-icon">W<span>.</span></span>
+                <span>WEB SCHOOL</span>
+            </a>
+
+            <div class="header-label">
+                <span class="online-dot"></span>
+                SKILLS VERIFICATION
+            </div>
+
+            <a
+                class="back-link"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+            >
+                ROADMAP <span aria-hidden="true">↗</span>
+            </a>
+        </header>
+
+        <main class="app-shell">
+            <section class="intro" id="intro">
+                <div class="intro-top">
+                    <span class="eyebrow">HTML / CSS / INTERACTION</span>
+                    <span class="lesson-number">
+                        LESSON 006 <span>/</span> TEST 006
+                    </span>
+                </div>
+
+                <div class="intro-main">
+                    <div class="intro-copy">
+                        <div class="eyebrow accent-label">
+                            <span class="eyebrow-line"></span>
+                            KNOWLEDGE CHECK
+                        </div>
+
+                        <h1>
+                            Links<span class="outline-word"> &</span><br />
+                            decoration<span class="coral-dot">.</span>
+                        </h1>
+
+                        <p>
+                            Test your understanding of anchor states,
+                            interactive link styling, text decoration, and
+                            accessible keyboard focus.
+                        </p>
+
+                        <div class="intro-meta">
+                            <div>
+                                <strong>20</strong>
+                                <span>QUESTIONS</span>
+                            </div>
+                            <div>
+                                <strong>~8</strong>
+                                <span>MINUTES</span>
+                            </div>
+                            <div>
+                                <strong>∞</strong>
+                                <span>ATTEMPTS</span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="start-button"
+                            id="startButton"
+                            type="button"
+                        >
+                            START SKILL CHECK
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+
+                    <div class="intro-art" aria-hidden="true">
+                        <div class="art-ring ring-one"></div>
+                        <div class="art-ring ring-two"></div>
+                        <div class="art-orbit-dot"></div>
+
+                        <div class="art-window">
+                            <div class="art-window-top">
+                                <span></span><span></span><span></span>
+                                <small>LINK_STATES.CSS</small>
+                            </div>
+
+                            <div class="art-window-content">
+                                <span class="art-code-muted">a:hover {</span>
+                                <span class="art-code-line">
+                                    color: <i>#ff8c9e</i>;
+                                </span>
+                                <span class="art-code-line">
+                                    text-decoration: <i>underline</i>;
+                                </span>
+                                <span class="art-code-muted">}</span>
+
+                                <div class="art-link">
+                                    Explore<span>↗</span>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="art-plus plus-one">+</span>
+                        <span class="art-plus plus-two">+</span>
+                        <span class="art-coordinate">50° / 006</span>
+                    </div>
+                </div>
+
+                <div class="intro-bottom">
+                    <span>01 / READ CAREFULLY</span>
+                    <span>02 / SELECT YOUR ANSWERS</span>
+                    <span>03 / REVIEW YOUR RESULTS</span>
+                </div>
+            </section>
+
+            <section class="quiz-section" id="quizSection" hidden>
+                <div class="quiz-topbar">
+                    <div>
+                        <span class="eyebrow">SKILL CHECK / 006</span>
+                        <h2>Show what you know<span>.</span></h2>
+                    </div>
+                    <div class="question-counter">
+                        <span id="currentQuestionNumber">01</span>
+                        <span class="counter-divider">/</span>
+                        <span id="totalQuestions">20</span>
+                    </div>
+                </div>
+
+                <div class="progress-track" aria-label="Quiz progress">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="quiz-meta">
+                    <span id="questionType">SINGLE ANSWER</span>
+                    <span id="answeredCount">0 / 20 ANSWERED</span>
+                </div>
+
+                <article class="question-card" id="questionCard">
+                    <div class="question-category" id="questionCategory">
+                        CSS BASICS
+                    </div>
+
+                    <h3 id="questionText"></h3>
+
+                    <div class="question-code" id="questionCode" hidden>
+                        <div class="code-heading">
+                            <span>CODE EXAMPLE</span>
+                            <span>CSS / HTML</span>
+                        </div>
+                        <pre><code id="questionCodeText"></code></pre>
+                    </div>
+
+                    <p class="question-hint" id="questionHint"></p>
+
+                    <div class="answer-list" id="answerList"></div>
+
+                    <div class="answer-feedback" id="answerFeedback" hidden>
+                        <span class="feedback-icon" id="feedbackIcon"></span>
+                        <div>
+                            <strong id="feedbackTitle"></strong>
+                            <p id="feedbackText"></p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="quiz-actions">
+                    <button
+                        class="secondary-button"
+                        id="restartButton"
+                        type="button"
+                    >
+                        <span aria-hidden="true">↺</span> RESTART
+                    </button>
+
+                    <div class="action-right">
+                        <button
+                            class="check-button"
+                            id="checkButton"
+                            type="button"
+                            disabled
+                        >
+                            CHECK ANSWER <span aria-hidden="true">✓</span>
+                        </button>
+
+                        <button
+                            class="next-button"
+                            id="nextButton"
+                            type="button"
+                            hidden
+                        >
+                            NEXT QUESTION <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" hidden>
+                <div class="results-topline">
+                    <span class="eyebrow">SKILL CHECK / 006</span>
+                    <span class="completed-label">
+                        <span></span> ATTEMPT COMPLETED
+                    </span>
+                </div>
+
+                <div class="results-main">
+                    <div class="result-copy">
+                        <div class="eyebrow accent-label">
+                            <span class="eyebrow-line"></span>
+                            YOUR PERFORMANCE
+                        </div>
+
+                        <h2 id="resultTitle">Well done<span>.</span></h2>
+
+                        <p id="resultDescription">Your results are ready.</p>
+
+                        <div class="result-score">
+                            <strong id="finalScore">0</strong>
+                            <span>/ 20</span>
+                        </div>
+
+                        <div class="result-stats">
+                            <div>
+                                <span>ACCURACY</span>
+                                <strong id="finalPercentage">0%</strong>
+                            </div>
+                            <div>
+                                <span>CORRECT</span>
+                                <strong id="correctCount">0</strong>
+                            </div>
+                            <div>
+                                <span>INCORRECT</span>
+                                <strong id="incorrectCount">0</strong>
+                            </div>
+                        </div>
+
+                        <div class="result-actions">
+                            <button
+                                class="start-button"
+                                id="retryButton"
+                                type="button"
+                            >
+                                TRY AGAIN <span aria-hidden="true">↻</span>
+                            </button>
+                            <a
+                                class="result-roadmap-link"
+                                href="https://freetimezp.github.io/roadmap-web-coding/"
+                            >
+                                BACK TO ROADMAP ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="result-visual">
+                        <div class="result-circle">
+                            <svg viewBox="0 0 220 220" aria-hidden="true">
+                                <circle
+                                    class="circle-track"
+                                    cx="110"
+                                    cy="110"
+                                    r="94"
+                                />
+                                <circle
+                                    class="circle-progress"
+                                    id="resultCircle"
+                                    cx="110"
+                                    cy="110"
+                                    r="94"
+                                />
+                            </svg>
+                            <div class="circle-content">
+                                <span>YOUR SCORE</span>
+                                <strong id="circlePercentage">0%</strong>
+                            </div>
+                        </div>
+                        <span class="result-orbit-label">006 / COMPLETED</span>
+                    </div>
+                </div>
+
+                <div class="result-storage-note" id="storageNote">
+                    <span class="storage-dot"></span>
+                    YOUR BEST SCORE IS SAVED IN THIS BROWSER
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="https://freetimezp.github.io/roadmap-web-coding/">
+                WEB SCHOOL<span>.</span>
+            </a>
+            <p>LEARN. PRACTICE. IMPROVE.</p>
+            <span>SKILL CHECK 006</span>
+        </footer>
+
+        <script src="./assets/js/main.js" defer></script>
+    </body>
 </html>
